@@ -1,4 +1,4 @@
-**:warning: This project is now archived and no longer supported. Please contact me if you maintain a replacement and would like me to link to your repo.**
+**:FORK of: https://github.com/oznu/docker-guacamole:**
 
 # Docker Guacamole
 
@@ -34,9 +34,9 @@ docker run \
 
 The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side.
 
-* `-p 8080:8080` - Binds the service to port 8080 on the Docker host, **required**
-* `-v /config` - The config and database location, **required**
-* `-e EXTENSIONS` - See below for details.
+-   `-p 8080:8080` - Binds the service to port 8080 on the Docker host, **required**
+-   `-v /config` - The config and database location, **required**
+-   `-e EXTENSIONS` - See below for details.
 
 ## Enabling Extensions
 
@@ -54,13 +54,13 @@ docker run \
 
 Currently the available extensions are:
 
-* auth-ldap - [LDAP Authentication](https://guacamole.apache.org/doc/gug/ldap-auth.html)
-* auth-duo - [Duo two-factor authentication](https://guacamole.apache.org/doc/gug/duo-auth.html)
-* auth-header - [HTTP header authentication](https://guacamole.apache.org/doc/gug/header-auth.html)
-* auth-cas - [CAS Authentication](https://guacamole.apache.org/doc/gug/cas-auth.html)
-* auth-openid - [OpenID Connect authentication](https://guacamole.apache.org/doc/gug/openid-auth.html)
-* auth-totp - [TOTP two-factor authentication](https://guacamole.apache.org/doc/gug/totp-auth.html)
-* auth-quickconnect - [Ad-hoc connections extension](https://guacamole.apache.org/doc/gug/adhoc-connections.html)
+-   auth-ldap - [LDAP Authentication](https://guacamole.apache.org/doc/gug/ldap-auth.html)
+-   auth-duo - [Duo two-factor authentication](https://guacamole.apache.org/doc/gug/duo-auth.html)
+-   auth-header - [HTTP header authentication](https://guacamole.apache.org/doc/gug/header-auth.html)
+-   auth-cas - [CAS Authentication](https://guacamole.apache.org/doc/gug/cas-auth.html)
+-   auth-openid - [OpenID Connect authentication](https://guacamole.apache.org/doc/gug/openid-auth.html)
+-   auth-totp - [TOTP two-factor authentication](https://guacamole.apache.org/doc/gug/totp-auth.html)
+-   auth-quickconnect - [Ad-hoc connections extension](https://guacamole.apache.org/doc/gug/adhoc-connections.html)
 
 You should only enable the extensions you require, if an extensions is not configured correctly in the `guacamole.properties` file it may prevent the system from loading. See the [official documentation](https://guacamole.apache.org/doc/gug/) for more details.
 
@@ -75,16 +75,16 @@ Mapped volumes behave differently when running Docker for Windows and you may en
 ```yml
 version: "2"
 services:
-  guacamole:
-    image: oznu/guacamole
-    container_name: guacamole
-    volumes:
-      - postgres:/config
-    ports:
-      - 8080:8080
+    guacamole:
+        image: oznu/guacamole
+        container_name: guacamole
+        volumes:
+            - postgres:/config
+        ports:
+            - 8080:8080
 volumes:
-  postgres:
-    driver: local
+    postgres:
+        driver: local
 ```
 
 ## License
@@ -93,4 +93,4 @@ Copyright (C) 2017-2020 oznu
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the [GNU General Public License](./LICENSE) for more details.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU General Public License](./LICENSE) for more details.
